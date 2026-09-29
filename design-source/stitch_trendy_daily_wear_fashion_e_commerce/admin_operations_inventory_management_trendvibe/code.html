@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Hanken+Grotesk:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-surface-variant":"#5c3f40","on-tertiary":"#ffffff","on-tertiary-fixed":"#002114","surface-container-highest":"#dce2f7","inverse-on-surface":"#edf0ff","primary":"#b80035","on-secondary-container":"#fffbff","inverse-surface":"#293040","surface-container-high":"#e1e8fd","secondary":"#4b41e1","on-background":"#141b2b","surface-dim":"#d3daef","error":"#ba1a1a","surface-tint":"#be0037","tertiary":"#006848","primary-container":"#e11d48","on-tertiary-container":"#eefff3","outline":"#906f70","on-surface":"#141b2b","on-primary-fixed":"#40000c","on-error":"#ffffff","secondary-fixed-dim":"#c3c0ff","primary-fixed":"#ffdada","inverse-primary":"#ffb3b6","surface-container-low":"#f1f3ff","secondary-container":"#645efb","tertiary-fixed-dim":"#68dba9","on-secondary-fixed":"#0f0069","on-secondary":"#ffffff","surface-container-lowest":"#ffffff","on-primary-container":"#fffaf9","surface":"#f9f9ff","on-tertiary-fixed-variant":"#005137","primary-fixed-dim":"#ffb3b6","secondary-fixed":"#e2dfff","surface-bright":"#f9f9ff","on-primary-fixed-variant":"#920028","on-error-container":"#93000a","surface-container":"#e9edff","background":"#f9f9ff","on-primary":"#ffffff","tertiary-fixed":"#85f8c4","surface-variant":"#dce2f7","tertiary-container":"#00845c","on-secondary-fixed-variant":"#3323cc","outline-variant":"#e5bdbe","error-container":"#ffdad6"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin":"1rem","space-md":"1rem","space-2xl":"3rem","gutter-desktop":"1.5rem","space-sm":"0.5rem","space-2xs":"0.125rem","space-xl":"2rem","space-lg":"1.5rem","margin-desktop":"2.5rem","gutter":"1rem","space-3xl":"4rem","space-xs":"0.25rem","margin-tablet":"1.5rem"},"fontFamily":{"display-lg":["Plus Jakarta Sans"],"label-md":["Hanken Grotesk"],"price-headline":["Plus Jakarta Sans"],"body-lg":["Hanken Grotesk"],"headline-sm":["Plus Jakarta Sans"],"label-lg":["Hanken Grotesk"],"price-strikethrough":["Hanken Grotesk"],"body-md":["Hanken Grotesk"],"headline-lg":["Plus Jakarta Sans"],"label-sm":["Hanken Grotesk"],"headline-md":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"body-sm":["Hanken Grotesk"],"headline-xl":["Plus Jakarta Sans"],"display-xl":["Plus Jakarta Sans"]},"fontSize":{"display-lg":["44px",{"lineHeight":"52px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"price-headline":["20px",{"lineHeight":"24px","fontWeight":"800"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-sm":["18px",{"lineHeight":"26px","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"price-strikethrough":["13px",{"lineHeight":"16px","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"700"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}],"headline-md":["22px",{"lineHeight":"30px","letterSpacing":"-0.005em","fontWeight":"600"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"headline-xl":["36px",{"lineHeight":"44px","letterSpacing":"-0.015em","fontWeight":"700"}],"display-xl":["56px",{"lineHeight":"64px","letterSpacing":"-0.02em","fontWeight":"800"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 bottom-0 w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="h-20 px-space-lg flex items-center gap-space-sm bg-surface-container-lowest"><img alt="Brand logo. - Primary color: #e11d48
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UEWP3ejU4qg5d1B0ERh62TvtNKMuJr5GT8_xSZqNxpQliAOjfhJCJgD6YaRNiqyCqkQRRewR1B7LjfHcdkMGmUwcZe31lO6LYrFQWx6pjaRjRA7yQDdwMIVVx7BE--vo7t7lAJje2Bf9VipHNDUiU8tl5fq4UcxJ4saMlCFmMCkbf5G_WgrVbvsK2Ta3gg3nmfTrgIY4Tt_swkCbK5Ua1e7_wCV3VPrU2ct0VwBUsA-V9IYu-j6_6vvbE"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">TrendVibe</span><span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Ops Portal</span></div></div><div class="px-space-md py-space-sm"><div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[20px]">storefront</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Active Market</span><span class="font-label-lg text-label-lg text-on-surface font-semibold truncate max-w-[130px]">Global Flagship</span></div></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">unfold_more</span></div></div><nav class="flex flex-col gap-space-2xs px-space-md py-space-xs" data-active-classes="bg-primary text-on-primary font-bold shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="overview-dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span>Overview / Dashboard</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="inventory-sku-management" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span>Inventory &amp; SKU Management</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="orders-fulfillment" href="#"><span class="material-symbols-outlined text-[20px]">local_shipping</span>Orders &amp; Fulfillment</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="flash-sales-discounts" href="#"><span class="material-symbols-outlined text-[20px]">bolt</span>Flash Sales &amp; Discounts</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="catalog-drops" href="#"><span class="material-symbols-outlined text-[20px]">category</span>Catalog &amp; Drops</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="analytics" href="#"><span class="material-symbols-outlined text-[20px]">analytics</span>Analytics</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span>Settings</a></nav></div><div class="p-space-md bg-surface-container-low/60"><div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-xs"><span class="w-2.5 h-2.5 rounded-full bg-tertiary animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">All Systems Live</span></div><span class="font-label-sm text-label-sm text-tertiary font-bold">99.98%</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-20 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-lg flex-1 max-w-xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span><input class="w-full h-11 pl-11 pr-space-md bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Search SKUs, styles, orders, barcode..." type="text"/></div><div class="hidden xl:flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container-low text-on-surface shrink-0"><span class="material-symbols-outlined text-secondary text-[18px]">hub</span><span class="font-label-md text-label-md font-semibold">US East Hub - Primary</span><span class="material-symbols-outlined text-on-surface-variant text-[16px]">expand_more</span></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs h-11 px-space-lg rounded-lg bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary-container transition-colors shadow-[0_1px_8px_rgba(0,0,0,0.04)]" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>Add Product</span></button><button class="relative w-11 h-11 rounded-lg bg-surface-container-low text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary"></span></button><div class="h-8 w-[1px] bg-surface-container-high mx-space-2xs"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-lg text-label-lg text-on-surface font-bold leading-tight">Elena Rostova</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Head of Merchandising &amp; Ops</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-surface-container-high" src="https://lh3.googleusercontent.com/aida/AEtjO1WQL8h6KPbHZ-hoWBD9xltR2NmH3hGdddNUGMeVHxHlGLnH9McFQDMalLSevuqo930YbAqfNEvm5l3A2NJNtNhK8Q0ZmyjiwI5wvna8hGp1aNVZh1_D3pkbhWG_7ofqAvvdHiWnaIkqHjymAwirt73LoZLN9mqLYl8N0JJ5EL2k6fyfcDM_WKsoC-oHDIuonN79fCg4-8p_mQEOsa2W2rLbo2L50Q-WUPOdGDJYBHwpsM6j-mOLP31HrGA"/></div></div></header><main class="w-full pt-20 px-space-xl bg-background min-h-screen"><div class="flex flex-col w-full pb-space-3xl gap-space-xl">
+<!-- Operational Sub-Header & Live Network Strip -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-sm text-label-sm uppercase font-bold text-primary tracking-widest">Ops Command Center</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">/</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">TrendVibe Global Logistics &amp; Fulfillment</span>
+</div>
+<div class="flex items-center gap-space-sm mt-space-2xs">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Active Inventory &amp; Demand Velocity</h1>
+<span class="px-space-xs py-space-2xs bg-surface-container-high text-secondary font-label-md text-label-md rounded-full font-bold">Cycle 42.8</span>
+</div>
+</div>
+<!-- Controls: Timeframe Pills & Action Cluster -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="inline-flex p-space-2xs bg-surface-container-low rounded-lg shadow-sm">
+<button class="timeframe-pill px-space-md py-space-xs rounded font-label-md text-label-md bg-surface-container-lowest text-primary font-bold shadow-sm transition-all" data-period="today" type="button">Today (Live)</button>
+<button class="timeframe-pill px-space-md py-space-xs rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" data-period="7d" type="button">Last 7 Days</button>
+<button class="timeframe-pill px-space-md py-space-xs rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" data-period="oct" type="button">October Drop Cycle</button>
+<button class="timeframe-pill px-space-md py-space-xs rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" data-period="q4" type="button">Q4 2025</button>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="flex items-center gap-space-xs px-space-md h-10 bg-surface-container-lowest text-on-surface hover:bg-surface-container-high rounded-lg font-label-md text-label-md transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">sync_alt</span>
+<span>Export CSV / ERP</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md h-10 bg-surface-container-lowest text-tertiary hover:bg-on-tertiary-container rounded-lg font-label-md text-label-md font-bold transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span>PO Generated (4)</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md h-10 bg-primary text-on-primary hover:bg-primary-container rounded-lg font-label-md text-label-md font-bold transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">add_box</span>
+<span>+ New SKU / Batch</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Live Node Status Ticker Bar -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-sm px-space-md flex flex-wrap items-center justify-between gap-space-sm shadow-sm">
+<div class="flex items-center gap-space-md overflow-x-auto text-nowrap">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label-md text-label-md font-bold">US-East (Newark Hub):</span>
+<span class="font-label-md text-label-md text-tertiary font-bold">94.2% On-Time Dispatch</span>
+</div>
+<span class="text-surface-container-highest">|</span>
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label-md text-label-md font-bold">EU-Central (Rotterdam):</span>
+<span class="font-label-md text-label-md text-tertiary font-bold">99.1% Operational</span>
+</div>
+<span class="text-surface-container-highest">|</span>
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">local_shipping</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">1,420 orders dispatched in last 4 hrs</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px]">schedule</span>
+<span>Next Batch Sync: <span class="font-bold text-on-surface">02:14 min</span></span>
+</div>
+</div>
+</div>
+<!-- KPI Cards Grid (4 Core High-Impact Tiles) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Metric 1: Total GMV -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold uppercase tracking-wider">Gross Merchandise Value</span>
+<span class="font-display-lg text-display-lg text-on-surface font-extrabold tracking-tight mt-space-2xs">$148,920<span class="text-headline-sm text-on-surface-variant">.50</span></span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">payments</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-space-2xs rounded bg-on-tertiary-container text-tertiary font-label-md text-label-md font-bold flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>+18.4%
+          </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">vs last drop cycle</span>
+</div>
+<!-- Sparkline Inline SVG -->
+<svg class="w-20 h-6 text-tertiary" fill="none" viewbox="0 0 100 30">
+<path d="M0 24 Q 20 28, 35 15 T 70 12 T 100 4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M0 24 Q 20 28, 35 15 T 70 12 T 100 4 L 100 30 L 0 30 Z" fill="currentColor" fill-opacity="0.12"></path>
+</svg>
+</div>
+</div>
+<!-- Metric 2: Active Inventory Health -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold uppercase tracking-wider">Active Inventory Health</span>
+<span class="font-display-lg text-display-lg text-on-surface font-extrabold tracking-tight mt-space-2xs">142,850 <span class="text-headline-sm text-on-surface-variant">Units</span></span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">layers</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-2xs pt-space-md mt-space-sm">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-on-surface font-semibold">1,840 Active SKUs</span>
+<span class="text-primary font-bold">38 Low Stock</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden flex">
+<div class="bg-tertiary h-full" style="width: 86%"></div>
+<div class="bg-secondary h-full" style="width: 10%"></div>
+<div class="bg-primary h-full" style="width: 4%"></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-space-2xs">
+<span>96.2% In-Stock Rate</span>
+<span class="text-tertiary font-semibold">Healthy Flow</span>
+</div>
+</div>
+</div>
+<!-- Metric 3: Fulfillment Pipeline -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold uppercase tracking-wider">Fulfillment Pipeline</span>
+<span class="font-display-lg text-display-lg text-on-surface font-extrabold tracking-tight mt-space-2xs">3,842 <span class="text-headline-sm text-on-surface-variant">Orders</span></span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[22px]">conveyor_belt</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs pt-space-md mt-space-sm font-label-sm text-label-sm flex-wrap">
+<span class="px-space-xs py-space-2xs bg-surface-container-low text-on-surface rounded font-medium">1,240 Packing</span>
+<span class="px-space-xs py-space-2xs bg-surface-container-low text-tertiary rounded font-bold">2,180 Shipped</span>
+<span class="px-space-xs py-space-2xs bg-error-container text-error rounded font-bold">422 Pending</span>
+</div>
+</div>
+<!-- Metric 4: Daily Return / Exchange Rate -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold uppercase tracking-wider">Return &amp; Exchange Rate</span>
+<span class="font-display-lg text-display-lg text-on-surface font-extrabold tracking-tight mt-space-2xs">4.8<span class="text-headline-sm text-on-surface-variant">%</span></span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">published_with_changes</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-2xs pt-space-md mt-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-space-2xs rounded bg-on-tertiary-container text-tertiary font-label-md text-label-md font-bold flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[14px]">arrow_downward</span>-1.2%
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Drop-shoulder guide impact</span>
+</div>
+<span class="font-body-sm text-body-sm text-tertiary font-semibold truncate">Saved ~$8,400 in return shipping</span>
+</div>
+</div>
+</div>
+<!-- Critical Attention Banner & Low-Stock Urgency Widget -->
+<div class="bg-gradient-to-r from-primary/10 via-surface-container-lowest to-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md relative overflow-hidden">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[28px] animate-pulse">crisis_alert</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-space-2xs rounded-full bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-wider font-bold">Critical Threshold</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Immediate Supplier Action Required</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface font-bold mt-space-2xs">
+          Action Required: 6 High-Velocity Viral SKUs nearing stockout threshold before weekend flash sale!
+        </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Heavyweight Boxy Tee and Ribbed Scoop Neck are projected to hit zero inventory within 42 hours based on live checkout conversion rates.
+        </p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 w-full md:w-auto">
+<button class="w-full md:w-auto px-space-lg h-11 bg-primary text-on-primary hover:bg-primary-container rounded-lg font-label-lg text-label-lg font-bold transition-all shadow-sm flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span>Auto-Trigger Supplier POs</span>
+</button>
+<button class="px-space-md h-11 bg-surface-container-high text-on-surface hover:bg-surface-container-highest rounded-lg font-label-lg text-label-lg font-semibold transition-all" type="button">
+        Dismiss
+      </button>
+</div>
+</div>
+<!-- Real-time Inventory & SKU Operations Table (The Core Feature) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm flex flex-col overflow-hidden">
+<!-- Table Header Controls: Search, Categorization, Filters -->
+<div class="p-space-lg bg-surface-container-lowest flex flex-col gap-space-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">Active SKU Matrix &amp; Stock Runout</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Continuous stock monitoring across all regional distribution nodes and drops.</p>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs">
+<!-- Stock Status Segmented Filter Toggle -->
+<div class="inline-flex p-space-2xs bg-surface-container-low rounded-lg text-on-surface">
+<button class="sku-status-filter px-space-sm py-space-xs rounded font-label-md text-label-md bg-surface-container-lowest text-primary font-bold shadow-sm" data-filter="all" type="button">All (1,840)</button>
+<button class="sku-status-filter px-space-sm py-space-xs rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface" data-filter="critical" type="button">Critical (6)</button>
+<button class="sku-status-filter px-space-sm py-space-xs rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface" data-filter="low" type="button">Low Stock (32)</button>
+<button class="sku-status-filter px-space-sm py-space-xs rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface" data-filter="transit" type="button">In-Transit (14)</button>
+<button class="sku-status-filter px-space-sm py-space-xs rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface" data-filter="healthy" type="button">Healthy (1,788)</button>
+</div>
+</div>
+</div>
+<!-- Secondary Search and Selectors -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-sm items-center">
+<div class="md:col-span-5 relative">
+<span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">manage_search</span>
+<input class="w-full h-11 pl-11 pr-space-md bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant focus:bg-surface-container-lowest outline-none shadow-sm transition-all" id="sku-search-input" placeholder="Search by SKU, style name, fabric code, or barcode..." type="text"/>
+</div>
+<div class="md:col-span-3 flex items-center">
+<div class="w-full relative">
+<select class="w-full h-11 px-space-md bg-surface-container-low text-on-surface font-label-md text-label-md rounded-lg appearance-none outline-none cursor-pointer pr-10">
+<option>All Product Categories</option>
+<option>Women's Casual &amp; Boxy</option>
+<option>Denim Lab &amp; Carpenter</option>
+<option>Everyday Essentials</option>
+<option>Streetwear Outerwear</option>
+<option>Summer Daily &amp; Linen</option>
+</select>
+<span class="material-symbols-outlined absolute right-space-md top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+<div class="md:col-span-2 flex items-center">
+<div class="w-full relative">
+<select class="w-full h-11 px-space-md bg-surface-container-low text-on-surface font-label-md text-label-md rounded-lg appearance-none outline-none cursor-pointer pr-10">
+<option>All Hubs (Global)</option>
+<option>US-East (Newark)</option>
+<option>US-West (LAX)</option>
+<option>EU-Central (Rotterdam)</option>
+</select>
+<span class="material-symbols-outlined absolute right-space-md top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[18px]">unfold_more</span>
+</div>
+</div>
+<div class="md:col-span-2 flex items-center justify-end gap-space-xs">
+<button class="w-full h-11 bg-surface-container-low hover:bg-surface-container-high rounded-lg text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-space-xs transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>More Filters</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Data Table Container -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<tr>
+<th class="py-space-sm px-space-md font-bold">Product Name &amp; SKU</th>
+<th class="py-space-sm px-space-md font-bold">Drop / Category</th>
+<th class="py-space-sm px-space-md font-bold">Size Inventory Breakdown</th>
+<th class="py-space-sm px-space-md font-bold">Current Stock / Reorder Pt</th>
+<th class="py-space-sm px-space-md font-bold">Velocity</th>
+<th class="py-space-sm px-space-md font-bold">Runout (Supply)</th>
+<th class="py-space-sm px-space-md font-bold">Operational Status</th>
+<th class="py-space-sm px-space-md font-bold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low font-body-sm text-body-sm text-on-surface">
+<!-- Row 1: Heavyweight Boxy Tee (CRITICAL) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-md">
+<img class="w-12 h-14 object-cover rounded-lg shrink-0 shadow-sm" data-alt="High-fashion studio shot of a 240 GSM forest green heavyweight drop-shoulder cotton t-shirt neatly folded on a minimalist concrete background, warm subtle rim light, premium streetwear aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE-kxXzCmDoTOnfNghq-QHYW2oVvf3Wb1HUopCK6i8UBhqdJkhtmDTX_LAH0vC0YpjoKhdiP7H1GyGtrDM-ybL7KYRj2RI7eW0FKOJFAtuUjeifdL_zBjyJco682KIn9KvxzBlVOhXypoMD4qJYtjpFAi9NdB19yJ-38boW8AihDAP_D2BU6cVsh_MaTgo6fS_DcV5HJ68bFiadqSA0CAUMRpOZIwHaq0x-_r_OWm5Bk1vgytUWrEv"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors truncate">Heavyweight 240 GSM Boxy Cotton Tee</span>
+<div class="flex items-center gap-space-xs mt-space-2xs">
+<span class="font-label-sm text-label-sm bg-surface-container-high px-space-xs py-space-2xs rounded font-mono text-on-surface-variant font-bold">TV-TEE-240-GRN</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">Viral Trend #1</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Women's Casual</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Autumn Warmth Drop</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-2xs flex-wrap max-w-[200px]">
+<span class="px-space-xs py-space-2xs rounded bg-error-container text-error font-label-sm text-label-sm font-bold" title="Out of stock">XS: 0</span>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">S: 18</span>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">M: 24</span>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">L: 60</span>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">XL: 40</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-space-2xs min-w-[130px]">
+<div class="flex justify-between items-baseline font-label-md text-label-md">
+<span class="font-price-headline text-price-headline text-primary font-bold">142</span>
+<span class="text-on-surface-variant">/ 300 target</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 28%"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">84 <span class="font-body-sm text-body-sm text-on-surface-variant">units/day</span></span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">+34% vs avg</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-error animate-pulse"></span>
+<span class="font-label-lg text-label-lg font-extrabold text-error">1.8 Days Left</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-space-2xs px-space-sm py-space-2xs rounded-full bg-error-container text-error font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                CRITICAL STOCKOUT
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center justify-end gap-space-xs">
+<button class="quick-reorder-btn px-space-md h-8 bg-primary text-on-primary hover:bg-primary-container rounded font-label-sm text-label-sm font-bold transition-all shadow-sm" data-name="Heavyweight 240 GSM Boxy Cotton Tee" data-sku="TV-TEE-240-GRN" type="button">
+                  Reorder
+                </button>
+<button class="w-8 h-8 rounded bg-surface-container-low text-on-surface hover:bg-surface-container-high flex items-center justify-center transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Wide-Leg High-Rise Relaxed Carpenter Denim (OPTIMAL) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-md">
+<img class="w-12 h-14 object-cover rounded-lg shrink-0 shadow-sm" data-alt="High-contrast editorial product image of vintage washed indigo wide-leg carpenter jeans with white accent stitching, laid flat on an ivory studio table, pristine e-commerce presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfO5-ShB91UvgNTvd2IglF007U5GH_qbHS9PHznAV-zIqhyahrHxllo9_xLui5rPwlIAx85XPg1I-eZmHjM4a3Cwr0fZKoZCL8qC_ih2CJGt8kFNaFuSoAi-zfCfZfeH_XtHhoeRFyjHbV8AulFhxcgzDe8c9t-zUmF3ZnbtE8GQ7va7lNvgaMtHZAVTN0HaeLWWjQhEYZ7i7qMEruOQq4by5iA8S4gDNo-ardrdzIHjwqIK0Qp2Lf"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors truncate">Wide-Leg High-Rise Relaxed Carpenter Denim</span>
+<div class="flex items-center gap-space-xs mt-space-2xs">
+<span class="font-label-sm text-label-sm bg-surface-container-high px-space-xs py-space-2xs rounded font-mono text-on-surface-variant font-bold">TV-JNS-WID-IND</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Denim Lab</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Denim Lab</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Core Essentials</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-2xs flex-wrap max-w-[200px]">
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">26: 210</span>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">28: 340</span>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">30: 420</span>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">32: 300</span>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">34: 180</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-space-2xs min-w-[130px]">
+<div class="flex justify-between items-baseline font-label-md text-label-md">
+<span class="font-price-headline text-price-headline text-on-surface font-bold">1,450</span>
+<span class="text-on-surface-variant">/ 500 target</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 92%"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">110 <span class="font-body-sm text-body-sm text-on-surface-variant">units/day</span></span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">Balanced Volume</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="font-label-lg text-label-lg font-bold text-tertiary">13.2 Days</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-space-2xs px-space-sm py-space-2xs rounded-full bg-on-tertiary-container text-tertiary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                OPTIMAL
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center justify-end gap-space-xs">
+<button class="px-space-md h-8 bg-surface-container-low text-on-surface hover:bg-surface-container-high rounded font-label-sm text-label-sm font-semibold transition-all" type="button">
+                  Manage Batches
+                </button>
+<button class="w-8 h-8 rounded bg-surface-container-low text-on-surface hover:bg-surface-container-high flex items-center justify-center transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Ribbed Scoop Neck Contour Tank (LOW STOCK) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-md">
+<img class="w-12 h-14 object-cover rounded-lg shrink-0 shadow-sm" data-alt="Close-up fashion photograph of an oat-beige ribbed scoop-neck stretch contour tank top, soft tactile ribbed cotton texture, high end minimalist lookbook lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANieTyPIs7f48Siv3nYKVcD9i3eh0WafLNtMNGpHsvaWFdp-i4M7GcpRXHQ-v3dZsEze4aSA5W6N3I1mY93tlDmPqJbfVWjFlufsghQqwXFWnx2QTdhqLFX6DiFsUbqbz3MhRO0C3B8VVUO7KED5CqRf3jtIfntJbGT2LbJsFCSBNfwzDvA5ZVfhdP7a7FNTUiu9q4XagSr9I7pSFWLAOM_Qn5VY1jaMOguQUSjuTXYdO7dDOhzmsW"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors truncate">Ribbed Scoop Neck Contour Tank</span>
+<div class="flex items-center gap-space-xs mt-space-2xs">
+<span class="font-label-sm text-label-sm bg-surface-container-high px-space-xs py-space-2xs rounded font-mono text-on-surface-variant font-bold">TV-TNK-SCP-OAT</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Bestseller</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Essentials</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Daily Layering</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-2xs flex-wrap max-w-[200px]">
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">XS: 40</span>
+<span class="px-space-xs py-space-2xs rounded bg-error-container text-error font-label-sm text-label-sm font-bold">S: 12</span>
+<span class="px-space-xs py-space-2xs rounded bg-error-container text-error font-label-sm text-label-sm font-bold">M: 20</span>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">L: 148</span>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">XL: 200</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-space-2xs min-w-[130px]">
+<div class="flex justify-between items-baseline font-label-md text-label-md">
+<span class="font-price-headline text-price-headline text-on-surface font-bold">420</span>
+<span class="text-on-surface-variant">/ 600 target</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 48%"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">65 <span class="font-body-sm text-body-sm text-on-surface-variant">units/day</span></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Steady demand</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-lg text-label-lg font-bold text-secondary">6.4 Days</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-space-2xs">
+<span class="inline-flex items-center gap-space-2xs px-space-sm py-space-2xs rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">history</span>
+                  LOW STOCK
+                </span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">+800 units due Thu</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center justify-end gap-space-xs">
+<button class="px-space-md h-8 bg-surface-container-high text-on-surface hover:bg-surface-container-highest rounded font-label-sm text-label-sm font-semibold transition-all" type="button">
+                  Track PO-492
+                </button>
+<button class="w-8 h-8 rounded bg-surface-container-low text-on-surface hover:bg-surface-container-high flex items-center justify-center transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Brushed Fleece Everyday Drop Hoodie (HEALTHY) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-md">
+<img class="w-12 h-14 object-cover rounded-lg shrink-0 shadow-sm" data-alt="Catalog studio photograph of a jet-black premium brushed heavyweight fleece hoodie with seamless kangaroo pocket and double lined hood on soft grey background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyjv87WMwqwrII1IuZCUmcI6jV3nvQMh38PqY5mMLJiBzBPQA984Kh16huOTqWWg52_pYlk9retqxbscqFQmzBmhoD3KkKHmFf2yyqP9A0eMlyOYGgVegp0txg7s5icOuf_oqyDd6syTiRNASj8-ge9Zj2z_Nd0MIlbvU35wnahcL5jjZFQktkK5B2V8ePU3MIIAXhmSCR3s28sbzAoNUns0o3iVDQEqLD0PMlDbj8ho-ndnE16YJX"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors truncate">Brushed Fleece Everyday Drop Hoodie</span>
+<div class="flex items-center gap-space-xs mt-space-2xs">
+<span class="font-label-sm text-label-sm bg-surface-container-high px-space-xs py-space-2xs rounded font-mono text-on-surface-variant font-bold">TV-SWT-BRS-BLK</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Streetwear</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Streetwear</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Winter Drop 01</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-2xs flex-wrap max-w-[200px]">
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">S: 410</span>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">M: 650</span>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">L: 720</span>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">XL: 320</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-space-2xs min-w-[130px]">
+<div class="flex justify-between items-baseline font-label-md text-label-md">
+<span class="font-price-headline text-price-headline text-on-surface font-bold">2,100</span>
+<span class="text-on-surface-variant">/ 800 target</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 100%"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">92 <span class="font-body-sm text-body-sm text-on-surface-variant">units/day</span></span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">+12% surge</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="font-label-lg text-label-lg font-bold text-tertiary">22.8 Days</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-space-2xs px-space-sm py-space-2xs rounded-full bg-on-tertiary-container text-tertiary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">check</span>
+                HEALTHY BUFFER
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center justify-end gap-space-xs">
+<button class="px-space-md h-8 bg-surface-container-low text-on-surface hover:bg-surface-container-high rounded font-label-sm text-label-sm font-semibold transition-all" type="button">
+                  Analytics
+                </button>
+<button class="w-8 h-8 rounded bg-surface-container-low text-on-surface hover:bg-surface-container-high flex items-center justify-center transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Air-Breeze Linen Relaxed Shirt (RESTOCK IN-TRANSIT) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-md">
+<img class="w-12 h-14 object-cover rounded-lg shrink-0 shadow-sm" data-alt="Editorial product still life of a relaxed sage green 100% natural french linen button down casual shirt on bright crisp surface, high-end resortwear vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHNlAyK73_1XDYVfcsg_c-dYry0s-fH7NigD3sg3EmWtnkik8z6JG9h4Nsku8zl_73e0QkZ-R83gerC32Q5vtC-wXeHK7OCcxegiDrlnMFBAtoZpAqa5sNLDitIlX6H3MJNeaaD-ThFzCGc5lE0ls8dXJt1pRvt_-Ju4CJ9tlIfQrhEmNH30aNf8TPP14NZp25qP9t2BTo6ItshbfR9sKS64gEzDXfCXjnHXq7HFGTlaCsd3PHa5Gg"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors truncate">Air-Breeze Linen Relaxed Shirt</span>
+<div class="flex items-center gap-space-xs mt-space-2xs">
+<span class="font-label-sm text-label-sm bg-surface-container-high px-space-xs py-space-2xs rounded font-mono text-on-surface-variant font-bold">TV-SHT-LIN-SGE</span>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">Eco Line</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Summer Daily</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Linen Collective</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-2xs flex-wrap max-w-[200px]">
+<span class="px-space-xs py-space-2xs rounded bg-error-container text-error font-label-sm text-label-sm font-bold">S: 8</span>
+<span class="px-space-xs py-space-2xs rounded bg-error-container text-error font-label-sm text-label-sm font-bold">M: 14</span>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">L: 38</span>
+<span class="px-space-xs py-space-2xs rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">XL: 28</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-space-2xs min-w-[130px]">
+<div class="flex justify-between items-baseline font-label-md text-label-md">
+<span class="font-price-headline text-price-headline text-error font-bold">88</span>
+<span class="text-on-surface-variant">/ 250 target</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 18%"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">45 <span class="font-body-sm text-body-sm text-on-surface-variant">units/day</span></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Seasonal exit</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-lg text-label-lg font-bold text-secondary">1.9 Days</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col gap-space-2xs">
+<span class="inline-flex items-center gap-space-2xs px-space-sm py-space-2xs rounded-full bg-surface-container-highest text-secondary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span>
+                  IN-TRANSIT (1,200)
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Customs cleared JFK</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<div class="inline-flex items-center justify-end gap-space-xs">
+<button class="px-space-md h-8 bg-secondary text-on-secondary hover:bg-secondary-container rounded font-label-sm text-label-sm font-bold transition-all shadow-sm" type="button">
+                  Track Cargo
+                </button>
+<button class="w-8 h-8 rounded bg-surface-container-low text-on-surface hover:bg-surface-container-high flex items-center justify-center transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination & Footer Summary -->
+<div class="p-space-md bg-surface-container-lowest flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span>Showing <strong class="text-on-surface font-semibold">1-5</strong> of <strong class="text-on-surface font-semibold">1,840</strong> Active Styles</span>
+<span>•</span>
+<span class="text-primary font-semibold">6 require immediate manual intervention</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="w-9 h-9 rounded-lg bg-surface-container-low text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-all disabled:opacity-40" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="px-space-sm py-space-xs rounded bg-primary text-on-primary font-label-sm text-label-sm font-bold">1</span>
+<button class="w-9 h-9 rounded-lg bg-surface-container-low text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-all font-label-sm text-label-sm font-semibold" type="button">2</button>
+<button class="w-9 h-9 rounded-lg bg-surface-container-low text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-all font-label-sm text-label-sm font-semibold" type="button">3</button>
+<span class="text-on-surface-variant text-[14px]">...</span>
+<button class="w-9 h-9 rounded-lg bg-surface-container-low text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-all font-label-sm text-label-sm font-semibold" type="button">184</button>
+<button class="w-9 h-9 rounded-lg bg-surface-container-low text-on-surface flex items-center justify-center hover:bg-surface-container-high transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Two-Column Operational Analytics & Warehouse Logistics Section -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+<!-- Left Column: Drop Performance & Category Stock Turnover (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">bar_chart</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Drop Performance &amp; Category Stock Turnover</h3>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary bg-on-tertiary-container px-space-xs py-space-2xs rounded-full font-bold">Healthy Velocity</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Annualized inventory turn rate across core product classifications and trend drops.</p>
+</div>
+<!-- Turnover Bars Visual Breakdown -->
+<div class="flex flex-col gap-space-md my-space-lg">
+<!-- Item 1 -->
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="font-bold text-on-surface">Graphic Tees &amp; Streetwear</span>
+<div class="flex items-center gap-space-md">
+<span class="text-on-surface-variant">42% total volume</span>
+<span class="font-bold text-primary font-price-headline text-price-headline">2.1x Turn</span>
+</div>
+</div>
+<div class="w-full h-3 bg-surface-container-high rounded-full overflow-hidden flex">
+<div class="bg-primary h-full rounded-full transition-all duration-700" style="width: 78%"></div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="font-bold text-on-surface">Denim Lab &amp; Trousers</span>
+<div class="flex items-center gap-space-md">
+<span class="text-on-surface-variant">28% total volume</span>
+<span class="font-bold text-secondary font-price-headline text-price-headline">1.8x Turn</span>
+</div>
+</div>
+<div class="w-full h-3 bg-surface-container-high rounded-full overflow-hidden flex">
+<div class="bg-secondary h-full rounded-full transition-all duration-700" style="width: 62%"></div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="font-bold text-on-surface">Everyday Basics &amp; Tanks</span>
+<div class="flex items-center gap-space-md">
+<span class="text-on-surface-variant">18% total volume</span>
+<span class="font-bold text-tertiary font-price-headline text-price-headline">3.4x Turn</span>
+</div>
+</div>
+<div class="w-full h-3 bg-surface-container-high rounded-full overflow-hidden flex">
+<div class="bg-tertiary h-full rounded-full transition-all duration-700" style="width: 92%"></div>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="flex flex-col gap-space-2xs">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="font-bold text-on-surface">Outerwear &amp; Co-ords</span>
+<div class="flex items-center gap-space-md">
+<span class="text-on-surface-variant">12% total volume</span>
+<span class="font-bold text-on-surface font-price-headline text-price-headline">1.4x Turn</span>
+</div>
+</div>
+<div class="w-full h-3 bg-surface-container-high rounded-full overflow-hidden flex">
+<div class="bg-on-surface-variant h-full rounded-full transition-all duration-700" style="width: 44%"></div>
+</div>
+</div>
+</div>
+<!-- Return Insights Callout Box -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-secondary/10 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">lightbulb</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Merchandising Operations Insight</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">
+<strong>Top Return Reason:</strong> Oversized fit running larger than customer expectations on Boxy Tees. The PDP sizing recommendation algorithm was recalibrated to prompt customers to size down for true-to-body fit, cutting return intent by 22% in the last 48 hours.
+          </p>
+</div>
+</div>
+</div>
+<!-- Right Column: Regional Fulfillment Nodes & Inbound Logistics (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<!-- Live Regional Nodes Status Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">warehouse</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Fulfillment Hub Capacity</h3>
+</div>
+<button class="text-primary font-label-sm text-label-sm font-bold hover:underline" type="button">Rebalance Load</button>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Hub 1: Newark -->
+<div class="bg-surface-container-low rounded-lg p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">US-East (Newark Hub)</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-error">88% Capacity</span>
+</div>
+<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 88%"></div>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>1,820 orders processing today</span>
+<span>18 packing stations active</span>
+</div>
+</div>
+<!-- Hub 2: Los Angeles -->
+<div class="bg-surface-container-low rounded-lg p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">US-West (Los Angeles)</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-tertiary">64% Capacity</span>
+</div>
+<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 64%"></div>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>940 orders processing today</span>
+<span>Optimal flow &amp; fast pick</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Inbound Major Shipment Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-sm relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">flight_land</span>
+<span class="font-label-sm text-label-sm uppercase font-bold text-primary tracking-wider">Priority Inbound Drop</span>
+</div>
+<span class="px-space-xs py-space-2xs bg-on-tertiary-container text-tertiary font-label-sm text-label-sm font-bold rounded">On Schedule</span>
+</div>
+<div class="flex flex-col mt-space-2xs">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Supplier Drop: 4,000 Units Organic Cotton</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Direct vessel delivery from Porto Facility, Portugal (PO-9104)</span>
+</div>
+<div class="mt-space-xs p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Estimated Newark Arrival</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Tomorrow, 08:00 AM EST</span>
+</div>
+<button class="px-space-md h-9 bg-surface-container-lowest text-on-surface hover:bg-surface-container-high rounded font-label-md text-label-md font-semibold shadow-sm transition-all" type="button">
+            Inspect Manifest
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Reorder Modal Template (Interactive via Script) -->
+<div class="fixed inset-0 bg-on-background/40 backdrop-blur-sm z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-200" id="reorder-modal">
+<div class="bg-surface-container-lowest rounded-xl max-w-lg w-full p-space-xl shadow-xl flex flex-col gap-space-md transform scale-95 transition-transform duration-200" id="reorder-modal-panel">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[24px]">shopping_cart_checkout</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">Fast Restock Trigger</h3>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container-high flex items-center justify-center transition-all" id="close-modal-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-lg flex flex-col gap-space-2xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold">Selected SKU</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface" id="modal-sku-name">Heavyweight 240 GSM Boxy Cotton Tee</span>
+<span class="font-mono font-label-md text-label-md text-primary font-bold" id="modal-sku-id">TV-TEE-240-GRN</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Select Target Warehouse</label>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="p-space-sm rounded-lg bg-surface-container-high text-primary font-label-md text-label-md font-bold text-left" type="button">
+            US-East (Newark Hub)
+            <span class="block font-body-sm text-body-sm text-on-surface-variant font-normal">Buffer critically low</span>
+</button>
+<button class="p-space-sm rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md font-semibold text-left" type="button">
+            US-West (Los Angeles)
+            <span class="block font-body-sm text-body-sm text-on-surface-variant font-normal">Moderate buffer</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Reorder Batch Quantity</label>
+<div class="flex items-center gap-space-xs">
+<input class="w-full h-11 px-space-md bg-surface-container-low rounded-lg font-headline-sm text-headline-sm font-bold text-on-surface outline-none" type="number" value="1200"/>
+<span class="font-label-lg text-label-lg text-on-surface-variant shrink-0">Units (6 cartons)</span>
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-space-lg h-11 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-container-high transition-all" id="cancel-modal-btn" type="button">Cancel</button>
+<button class="px-space-xl h-11 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold hover:bg-primary-container transition-all shadow-sm flex items-center gap-space-xs" id="confirm-reorder-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Dispatch Purchase Order</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Timeframe Pills Interactive Toggle
+  document.querySelectorAll('.timeframe-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.timeframe-pill').forEach(b => {
+        b.classList.remove('bg-surface-container-lowest', 'text-primary', 'font-bold', 'shadow-sm');
+        b.classList.add('text-on-surface-variant');
+      });
+      btn.classList.add('bg-surface-container-lowest', 'text-primary', 'font-bold', 'shadow-sm');
+      btn.classList.remove('text-on-surface-variant');
+    });
+  });
+
+  // SKU Status Filter Tabs Toggle
+  document.querySelectorAll('.sku-status-filter').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.sku-status-filter').forEach(b => {
+        b.classList.remove('bg-surface-container-lowest', 'text-primary', 'font-bold', 'shadow-sm');
+        b.classList.add('text-on-surface-variant');
+      });
+      btn.classList.add('bg-surface-container-lowest', 'text-primary', 'font-bold', 'shadow-sm');
+      btn.classList.remove('text-on-surface-variant');
+    });
+  });
+
+  // Reorder Modal Logic
+  const modal = document.getElementById('reorder-modal');
+  const modalPanel = document.getElementById('reorder-modal-panel');
+  const modalSkuName = document.getElementById('modal-sku-name');
+  const modalSkuId = document.getElementById('modal-sku-id');
+
+  function openModal(name, sku) {
+    if (modalSkuName) modalSkuName.textContent = name;
+    if (modalSkuId) modalSkuId.textContent = sku;
+    modal.classList.remove('hidden');
+    setTimeout(() => {
+      modal.classList.remove('opacity-0');
+      modalPanel.classList.remove('scale-95');
+    }, 10);
+  }
+
+  function closeModal() {
+    modal.classList.add('opacity-0');
+    modalPanel.classList.add('scale-95');
+    setTimeout(() => {
+      modal.classList.add('hidden');
+    }, 200);
+  }
+
+  document.querySelectorAll('.quick-reorder-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const sku = btn.getAttribute('data-sku');
+      const name = btn.getAttribute('data-name');
+      openModal(name, sku);
+    });
+  });
+
+  document.getElementById('close-modal-btn')?.addEventListener('click', closeModal);
+  document.getElementById('cancel-modal-btn')?.addEventListener('click', closeModal);
+  document.getElementById('confirm-reorder-btn')?.addEventListener('click', () => {
+    alert('Purchase Order triggered successfully to Vendor Portuguese Textiles Hub!');
+    closeModal();
+  });
+
+  // Simple live search filter in SKU table
+  const searchInput = document.getElementById('sku-search-input');
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase();
+      document.querySelectorAll('tbody tr').forEach(row => {
+        const text = row.innerText.toLowerCase();
+        row.style.display = text.includes(query) ? '' : 'none';
+      });
+    });
+  }
+</script></main></div></body></html>

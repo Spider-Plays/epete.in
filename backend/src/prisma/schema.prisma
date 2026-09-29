@@ -1,0 +1,369 @@
+// Prisma Schema for Clothing E-Commerce Platform
+// Models: Users, Addresses, Categories, Brands, Products, ProductImages, ProductVariants,
+// Wishlists, WishlistItems, Carts, CartItems, Orders, OrderItems, Payments, Coupons, Reviews
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// User model
+model User {
+  id            String   @id @default(uuid())
+  email         String   @unique
+  password      String
+  name          String
+  phone         String?
+  emailVerified Boolean  @default(false)
+  role          String   @default("customer") // customer or admin
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Relations
+  addresses     Address[] @relation("UserAddresses")
+  wishlists     Wishlist[] @relation("UserWishlists")
+  carts         Cart[] @relation("UserCarts")
+  orders        Order[] @relation("UserOrders")
+  payments      Payment[] @relation("UserPayments")
+  reviews       Review[] @relation("UserReviews")
+  couponUseds   CouponUsed[] @relation("UserCouponUseds")
+}
+
+// Address model
+model Address {
+  id          String   @id @default(uuid())
+  userId      String
+  user        User     @relation("UserAddresses", fields: [userId], references: [id])
+  type        String   // billing or shipping
+  firstName   String
+  lastName    String
+  street      String
+  apartment   String?
+  city        String
+  state       String
+  postalCode  String
+  country     String
+  isDefault   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([userId])
+  @@index([type])
+}
+
+// Category model
+model Category {
+  id          String   @id @default(uuid())
+  name        String
+  slug        String   @unique
+  description String?
+  parentId    String?  // For nested categories
+  parent      Category? @relation("CategoryParent", fields: [parentId], references: [id])
+  children    Category[] @relation("CategoryParent")
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  products    Product[]
+
+  @@index([slug])
+  @@index([parentId])
+}
+
+// Brand model
+model Brand {
+  id          String   @id @default(uuid())
+  name        String
+  slug        String   @unique
+  description String?
+  logoUrl     String?
+  websiteUrl  String?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  products    Product[]
+
+  @@index([slug])
+}
+
+// Product model
+model Product {
+  id          String   @id @default(uuid())
+  name        String
+  description String
+  categoryId  String
+  category    Category @relation(fields: [categoryId], references: [id])
+  brandId     String
+  brand       Brand    @relation(fields: [brandId], references: [id])
+  basePrice   Float
+  isActive    Boolean  @default(true)
+  isFeatured  Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  images      ProductImage[]
+  variants    ProductVariant[]
+  wishlists   WishlistItem[]
+  cartItems   CartItem[]
+  orderItems  OrderItem[]
+  reviews     Review[]
+
+  @@index([categoryId])
+  @@index([brandId])
+  @@index([isActive])
+  @@index([isFeatured])
+}
+
+// ProductImage model
+model ProductImage {
+  id        String   @id @default(uuid())
+  productId String
+  product   Product  @relation(fields: [productId], references: [id])
+  url       String
+  altText   String?
+  isPrimary Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([productId])
+}
+
+// ProductVariant model
+model ProductVariant {
+  id            String   @id @default(uuid())
+  productId     String
+  product       Product  @relation(fields: [productId], references: [id])
+  size          String
+  color         String
+  price         Float
+  sku           String   @unique
+  stockQuantity Int      @default(0)
+  isActive      Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Relations
+  cartItems     CartItem[] @relation("ProductVariantCartItems")
+  orderItems    OrderItem[] @relation("ProductVariantOrderItems")
+
+  @@index([productId])
+  @@index([sku])
+  @@index([isActive])
+}
+
+// Wishlist model
+model Wishlist {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation("UserWishlists", fields: [userId], references: [id])
+  name      String   @default("My Wishlist")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  items     WishlistItem[]
+
+  @@index([userId])
+}
+
+// WishlistItem model
+model WishlistItem {
+  id        String   @id @default(uuid())
+  wishlistId String
+  wishlist  Wishlist @relation(fields: [wishlistId], references: [id])
+  productId String
+  product   Product  @relation(fields: [productId], references: [id])
+  addedAt   DateTime @default(now())
+
+  @@index([wishlistId])
+  @@index([productId])
+  @@unique([wishlistId, productId]) // Prevent duplicate items in wishlist
+}
+
+// Cart model
+model Cart {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation("UserCarts", fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  items     CartItem[]
+
+  @@index([userId])
+}
+
+// CartItem model
+model CartItem {
+  id        String   @id @default(uuid())
+  cartId    String
+  cart      Cart     @relation(fields: [cartId], references: [id])
+  productId String
+  product   Product  @relation(fields: [productId], references: [id])
+  variantId String?
+  variant   ProductVariant? @relation("ProductVariantCartItems", fields: [variantId], references: [id])
+  quantity  Int      @default(1)
+  price     Float    // Price at time of adding to cart
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([cartId])
+  @@index([productId])
+  @@index([variantId])
+}
+
+// Order model
+model Order {
+  id            String   @id @default(uuid())
+  userId        String
+  user          User     @relation("UserOrders", fields: [userId], references: [id])
+  orderNumber   String   @unique
+  status        String   @default("PENDING") // PENDING, CONFIRMED, PROCESSING, SHIPPED, DELIVERED, CANCELLED, RETURNED
+  paymentStatus String   @default("PENDING") // PENDING, PAID, FAILED, REFUNDED, PARTIALLY_REFUNDED
+  subtotal      Float
+  taxAmount     Float
+  shippingAmount Float
+  discountAmount Float
+  totalAmount   Float
+  paymentMethod String   // credit_card, paypal, razorpay, cash_on_delivery
+  shippingAddress Json
+  billingAddress  Json?
+  notes         String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Relations
+  items         OrderItem[]
+  payments      Payment[] @relation("OrderPayments")
+  couponUseds   CouponUsed[] @relation("OrderCouponUseds")
+
+  @@index([userId])
+  @@index([orderNumber])
+  @@index([status])
+  @@index([paymentStatus])
+}
+
+// OrderItem model
+model OrderItem {
+  id        String   @id @default(uuid())
+  orderId   String
+  order     Order    @relation(fields: [orderId], references: [id])
+  productId String
+  product   Product  @relation(fields: [productId], references: [id])
+  variantId String?
+  variant   ProductVariant? @relation("ProductVariantOrderItems", fields: [variantId], references: [id])
+  quantity  Int
+  price     Float    // Price at time of purchase
+  total     Float    // quantity * price
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([orderId])
+  @@index([productId])
+  @@index([variantId])
+}
+
+// Payment model
+model Payment {
+  id          String   @id @default(uuid())
+  orderId     String
+  order       Order    @relation("OrderPayments", fields: [orderId], references: [id])
+  userId      String
+  user        User     @relation("UserPayments", fields: [userId], references: [id])
+  amount      Float
+  currency    String   @default("USD")
+  status      String   // PENDING, PROCESSING, COMPLETED, FAILED, REFUNDED
+  paymentMethod String // credit_card, paypal, razorpay, cash_on_delivery
+  transactionId String? // ID from payment gateway
+  gatewayResponse Json?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([orderId])
+  @@index([status])
+  @@index([paymentMethod])
+  @@index([userId])
+}
+
+// Coupon model
+model Coupon {
+  id          String   @id @default(uuid())
+  code        String   @unique
+  description String?
+  discountType String // percentage or fixed
+  discountValue Float
+  minimumPurchase Float? // Minimum order value to apply coupon
+  maximumDiscount Float? // Maximum discount amount
+  startDate   DateTime
+  endDate     DateTime
+  isActive    Boolean  @default(true)
+  usageLimit  Int?     // Maximum number of times coupon can be used (null for unlimited)
+  usedCount   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  couponUseds   CouponUsed[] @relation("CouponCouponUseds")
+
+  @@index([code])
+  @@index([isActive])
+  @@index([startDate])
+  @@index([endDate])
+}
+
+// CouponUsage model (to track which users used which coupons)
+model CouponUsed {
+  id        String   @id @default(uuid())
+  couponId  String
+  coupon    Coupon   @relation("CouponCouponUseds", fields: [couponId], references: [id])
+  userId    String
+  user      User     @relation("UserCouponUseds", fields: [userId], references: [id])
+  orderId   String
+  order     Order    @relation("OrderCouponUseds", fields: [orderId], references: [id])
+  usedAt    DateTime @default(now())
+
+  @@index([couponId])
+  @@index([userId])
+  @@index([orderId])
+  @@unique([couponId, userId, orderId]) // Prevent duplicate usage
+}
+
+// Review model
+model Review {
+  id        String   @id @default(uuid())
+  productId String
+  product   Product  @relation(fields: [productId], references: [id])
+  userId    String
+  user      User     @relation("UserReviews", fields: [userId], references: [id])
+  rating    Int      // 1-5 stars
+  title     String?
+  comment   String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([productId])
+  @@index([userId])
+  @@index([rating])
+}
+
+// Analytics model (for storing pre-computed analytics data)
+model Analytics {
+  id        String   @id @default(uuid())
+  type      String   // e.g., "daily_sales", "user_growth", "product_views"
+  date      DateTime
+  data      Json
+  createdAt DateTime @default(now())
+
+  @@index([type])
+  @@index([date])
+}
