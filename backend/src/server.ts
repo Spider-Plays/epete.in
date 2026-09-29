@@ -25,7 +25,7 @@ const PORT = config.port;
 // Middleware
 app.use(helmet());
 app.use(cors({
-  origin: (origin, callback) => {
+  origin: (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) => {
     const allowed = allowedOrigins();
     // Allow non-browser clients (no Origin) and configured frontends
     if (!origin || allowed.includes(origin) || allowed.includes("*")) {

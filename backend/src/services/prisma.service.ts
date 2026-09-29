@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+import { Prisma, PrismaClient } from "@prisma/client";
 
 // Create a single PrismaClient instance
 export const prisma = new PrismaClient();
@@ -27,7 +27,7 @@ export const handlePrismaError = (error: any) => {
 
 // Export a utility function for transactions
 export const runTransaction = async <T>(
-  callback: (tx: PrismaClient) => Promise<T>
+  callback: (tx: Prisma.TransactionClient) => Promise<T>
 ): Promise<T> => {
   return prisma.$transaction(async (tx) => {
     return callback(tx);

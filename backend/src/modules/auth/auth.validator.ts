@@ -13,8 +13,8 @@ export const registerValidator = [
     .isLength({ min: 2 })
     .withMessage("Name must be at least 2 characters long"),
   body("phone")
-    .optional()
-    .isMobilePhone()
+    .optional({ values: "falsy" })
+    .isMobilePhone("any")
     .withMessage("Please provide a valid phone number"),
 ];
 

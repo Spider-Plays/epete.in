@@ -95,6 +95,13 @@ export class AuthService {
   }
 
   /**
+   * Issue a new access token for a user id (used by refresh flow)
+   */
+  issueAccessToken(userId: string, role = "customer"): string {
+    return this.generateAccessToken(userId, role);
+  }
+
+  /**
    * Generate access token
    */
   private generateAccessToken(userId: string, role: string): string {

@@ -98,7 +98,8 @@ export class AuthController {
       }
 
       const userId = (decoded as any).userId;
-      const newAccessToken = authService.generateAccessToken(userId);
+      const role = (decoded as any).role || "customer";
+      const newAccessToken = authService.issueAccessToken(userId, role);
 
       res.status(200).json({
         success: true,
