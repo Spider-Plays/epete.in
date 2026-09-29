@@ -37,23 +37,25 @@ export const config = {
   emailUser: process.env.EMAIL_USER || "",
   emailPass: process.env.EMAIL_PASS || "",
   
-  // Frontend URL for CORS
+  // Frontend URL(s) for CORS — comma-separated allowed
   frontendUrl: process.env.FRONTEND_URL || "http://localhost:3000",
 };
 
+function allowedOrigins(): string[] {
+  return config.frontendUrl
+    .split(",")
+    .map((o) => o.trim())
+    .filter(Boolean);
+}
+
+export { allowedOrigins };
+
 // Validate required environment variables in production
 if (config.nodeEnv === "production") {
-  const requiredVars = [
-    "DATABASE_URL",
-    "JWT_ACCESS_SECRET",
-    "JWT_REFRESH_SECRET",
-    "STRIPE_SECRET_KEY",
-    "RAZORPAY_KEY_ID",
-    "RAZORPAY_KEY_SECRET",
-  ];
-  
-  const missingVars = requiredVars.filter(varName => !process.env[varName]);
-  
+  const requiredVars = ["DATABASE_URL", "JWT_ACCESS_SECRET", "JWT_REFRESH_SECRET"];
+
+  const missingVars = requiredVars.filter((varName) => !process.env[varName]);
+
   if (missingVars.length > 0) {
     throw new Error(
       `Missing required environment variables: ${missingVars.join(", ")}`

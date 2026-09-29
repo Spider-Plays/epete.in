@@ -4,7 +4,7 @@ import helmet from "helmet";
 import cookieParser from "cookie-parser";
 
 // Import config
-import config from "./config";
+import config, { allowedOrigins } from "./config";
 // Import routes
 import authRoutes from "./modules/auth/auth.routes";
 import productRoutes from "./modules/products/product.routes";
@@ -25,8 +25,16 @@ const PORT = config.port;
 // Middleware
 app.use(helmet());
 app.use(cors({
-  origin: config.frontendUrl,
-  credentials: true
+  origin: (origin, callback) => {
+    const allowed = allowedOrigins();
+    // Allow non-browser clients (no Origin) and configured frontends
+    if (!origin || allowed.includes(origin) || allowed.includes("*")) {
+      callback(null, true);
+      return;
+    }
+    callback(new Error(`CORS blocked for origin: ${origin}`));
+  },
+  credentials: true,
 }));
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true, limit: "10mb" }));
